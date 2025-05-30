@@ -7,7 +7,7 @@ const api = "a849256a24d3331c1ae978f7544d77d0";
 let container = document.querySelector(".container");
 
 submitButton.addEventListener("click", async function () {
-  const city = userData.value;
+  const city = userData.value.trim();
 
   if (city) {
     try {
