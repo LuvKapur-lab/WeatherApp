@@ -23,7 +23,7 @@ submitButton.addEventListener("click", async function () {
 });
 
 async function getWeatherData(city) {
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api}&units=metric`;
 
   const response = await fetch(apiUrl);
 
@@ -41,9 +41,7 @@ function displayWeatherInfo(data) {
     weather: [{ description, id }],
   } = data;
 
-  h1.textContent = `${city} got fucking ${description} with ${Math.floor(
-    temp - 273.15
-  )}°C`;
+  h1.textContent = `${city} got fucking ${description} feels like ${temp}°C`;
 
   getWeatherEmoji(id)
 }
